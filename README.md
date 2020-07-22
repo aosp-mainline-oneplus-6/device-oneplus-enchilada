@@ -1,4 +1,6 @@
-# device/xiaomi/beryllium (AOSP device config for Xiaomi Poco F1)
+# Forked for enchilada :>
+
+# device/oneplus/enchilada (AOSP device config for Xiaomi Poco F1)
 
 # How to unlock and root Poco F1?
 ```
@@ -9,16 +11,12 @@ MAY BRICK YOUR DEVICE AS WELL. I'M NOT RESPONSIBLE FOR
 EITHER OF THAT.
 ```
 
-Here is a reasonable guide to get you started on
-unlocking and rooting Poco F1 -->
-https://forum.xda-developers.com/poco-f1/how-to/xiaomi-poco-f1-unlock-bootloader-custom-t3839405
-
 Just for the records I downloaded and installed following
 external packages to unlock and root my device-->
 * miflash_unlock-en-3.3.525.23.zip (MS Windows only tool for unlocking)
-* twrp-3.3.0-0-beryllium.img (Recovery)
-* beryllium-9.6.10-9.0-vendor-firmware.zip (LineageOS dependency)
-* lineage-16.0-20190612-nightly-beryllium-signed.zip
+* twrp-3.3.0-0-enchilada.img (Recovery)
+* enchilada-9.6.10-9.0-vendor-firmware.zip (LineageOS dependency)
+* lineage-16.0-20190612-nightly-enchilada-signed.zip
 * Magisk-v19.3.zip (Root)
 * MagiskManager-v7.2.0.apk
 
@@ -48,7 +46,7 @@ make -j$nproc
         hence I'm not shipping them in my build setup. You can
         extract Adreno a630_* firmware binaries from a working
         device build. I extracted mine from
-        lineage-16.0-20190612-nightly-beryllium-signed.zip ;)
+        lineage-16.0-20190612-nightly-enchilada-signed.zip ;)
 
         Then copy the binaries to out vendor directory
         i.e. out/target/product/beryllium/vendor/firmware,
@@ -75,7 +73,7 @@ cd kernel-repo
 repo init -u https://android.googlesource.com/kernel/manifest -b common-android-mainline
 git clone git@github.com:pundiramit/android-local-manifests.git .repo/local_manifests -b kernel
 repo sync -j$nproc
-BUILD_CONFIG=beryllium/build.config.beryllium ./build/build.sh
+BUILD_CONFIG=enchilada/build.config.enchilada ./build/build.sh
 ```
 
 * Delete all objects in aosp-repo/device/xiaomi/beryllium/prebuilt-kernel/android-mainline/
